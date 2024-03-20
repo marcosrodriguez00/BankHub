@@ -1,0 +1,8 @@
+Falta:
+
+- idea: mostrar valor dolar
+- mejorar la pagina cards, se ve muy vacio
+- arreglar formulario para pedir cards
+- mejorar títulos de las paginas
+
+- responsive index

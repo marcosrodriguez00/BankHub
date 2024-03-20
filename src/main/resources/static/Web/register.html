@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../resources/style.css">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../resources/Images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>BankHub | Accounts</title>
+</head>
+<body>
+    <div id="app">
+        <header class="headerHeight">
+            <div class="d-flex justify-content-center">
+                <a class="w-100 d-flex justify-content-start ps-5" href="#">
+                    <img class="logoSize p-3" style="width: 15%;" src="../resources/Images/bankHub_Logo-removebg-preview.png" alt="BankHub Logo">
+                </a>
+                <a href="/index.html" class="d-flex align-items-center" style="text-decoration: none;">
+                    <p>Go back to HomePage</p>
+                </a>
+            </div>
+        </header>
+        <main>
+            <div class="register_height">
+                <div class="login-box">
+                    <div class="d-flex justify-content-center mb-3">
+                        <a href="../index.html" class="d-flex justify-content-center">
+                            <img src="../resources/Images/bankHub logo letras.png" alt="BankHub Logo" class="loginLogo">
+                        </a>
+                    </div>
+                    <form>
+                        <div class="d-flex gap-2">
+                            <div class="user-box" style="width: 45vh;">
+                                <input type="text" name="firstName" required="" v-model="firstName">
+                                <label>Fisrt Name</label>
+                            </div>
+                            <div class="user-box" style="width: 45vh;">
+                                <input type="text" name="lastName" required="" v-model="lastName">
+                                <label>Last Name</label>
+                            </div>
+                        </div>
+                        <div class="user-box">
+                            <input type="text" name="email" required="" v-model="email">
+                            <label>Email</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="password" name="password" required="" v-model="password">
+                            <label>Password</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="password" name="confirm_password" required="" v-model="confirm_password">
+                            <label>Confirm Password</label>
+                            <div v-show="passwordMatch == false">
+                                <p class="notMatch">Passwords do not match.</p>
+                            </div> 
+                        </div>
+                        <center>
+                        <button class="sendHover" type="button" @click="register">
+                            REGISTER
+                            <span></span>
+                        </button>
+                        </center>
+                    </form>
+                    <div class="d-flex justify-content-center">
+                        <p class="loginRedirect">You are already a client? <a class="loginRedirect" href="login.html">login now</a></p>
+                    </div>
+                  </div>
+            </div>
+        </main>
+        <footer class="footerColor mt-3">
+            <div class="d-flex justify-content-between ps-4 pe-4">
+                <div class="justify-content-center align-items-center">
+                    <p class="pColor text-center" style="color: white; font-size: 1rem;">2023 - &copy; All rights reserved</p>
+                </div>
+                <div class="d-flex gap-3 iconSize">
+                    <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.whatsapp.com/"><i class="bi bi-whatsapp"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+<script src="../resources/register.js"></script>
+</body>
+</html>

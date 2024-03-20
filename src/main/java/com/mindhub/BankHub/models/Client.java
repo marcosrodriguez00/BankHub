@@ -78,7 +78,7 @@ public class Client {
         this.password = password;
     }
 
-    public Boolean getAdmin() {
+    public Boolean isAdmin() {
         return admin;
     }
 

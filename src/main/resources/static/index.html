@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../resources/style.css">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="../resources/Images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>BankHub | Home Page</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="d-flex justify-content-between align-items-center w-100" style="background-color: black; min-height: 10vh;">
+                <img src="resources/Images/bankHub_Logo-removebg-preview.png" alt="bankhubLogo" style="width: 12%; padding: 25px;">
+                <!--
+                <a class="w-75 h-100 d-flex justify-content-center align-items-center" href="#">
+                    <img class="logoSize p-2" src="../resources/Images/bankHub logo letras.png" alt="BankHub Logo">
+                </a>
+                -->
+                <a href="Web/login.html" class="linkLogin">
+                    <i class="bi bi-door-open"></i>
+                    <button class="btn" aria-current="page" style="color: white;">Login</button>
+                </a>
+            </div>
+        </header>
+        
+        <main>
+            <div style="min-height: 100vh;">
+                <div class="indexBackground1" style="height: 60vh;">
+                    <div class="d-flex gap-5 justify-content-around align-items-center indexSectionPadding" style="height: 100%;">
+                        <div style="min-width: 50%;">
+                            <h2>Security and trust, that's our core</h2>
+                            <p>Become a client right now and join the most secure banking organization</p>
+                            <div class="d-flex justify-content-center mt-5" style="min-width: 50%;">
+                                <a href="Web/register.html"><button type="button" class="btn registerButton">Register now</button></a>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <img src="resources/Images/ciberSecurity.jpg" class="d-block w-100 carouselImage" alt="...">
+                        </div>      
+                    </div>
+                </div>
+
+                <div class="indexBackground2" style="height: 60vh;">
+                    <div class="d-flex gap-5 justify-content-around align-items-center indexSectionPadding" style="height: 100%;">     
+                        <div class="d-flex justify-content-center" style="min-width: 50%;">
+                            <img src="resources/Images/happy_people.jpeg" class="d-block carouselImage" style="width: 88%;" alt="...">
+                        </div> 
+                        <div style="min-width: 50%; min-height: 100%;" class="justify-content-center align-content-center">
+                            <h2 style="color: white;">About us</h2>
+                            <p style="color: white;">
+                                BankHub is more than just another bank, we are a company that 
+                                started from the desire of helping simple people solve there 
+                                financial issues in a simple way. We make it so that you can stop
+                                worrying about how to handle your finances, and can give attention
+                                to enjoying your life.
+                            </p>
+                        </div>   
+                    </div>                   
+                </div>
+
+                <div class="indexBackground3" style="min-height: fit-content;">
+                    <div class="d-flex flex-column gap-2 justify-content-around align-items-center" style="padding: 2rem;">
+                        <div>
+                            <h3 style="color: white;">Our clients</h3>
+                        </div>    
+                        <div class="containerCards d-flex">
+                            <div class="clientCard" data-aos="zoom-out-up">
+                                <div class="content">
+                                    <div class="imgBox">
+                                        <img src="resources/Images/Jhon_and_Maya.jpeg" alt="Client #1" />
+                                    </div>
+                                    <div class="contentBx">
+                                        <h3 style="--i: 1">Jhon and Maya</h3>
+                                        <h3 style="--i: 2">
+                                            <span style="font-size: 20px">
+                                                With our help, they were able to afford an appartment in the 
+                                                neighbourhood they always dreamt about
+                                            </span>
+                                        </h3>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <div class="clientCard" data-aos="zoom-out-up" data-aos-delay="100">
+                                <div class="content">
+                                    <div class="imgBox">
+                                        <img src="resources/Images/Tim_and_grandkids.jpg" alt="Client #2" />
+                                    </div>
+                                    <div class="contentBx">
+                                        <h3 style="--i: 1">Tim</h3>
+                                        <h3 style="--i: 2">
+                                            <span style="font-size: 20px; max-width: fit-content; padding: 5px;">
+                                                Thanks to us, Tim is now retired enjoying watching his grandkids grow
+                                            </span>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="clientCard" data-aos="zoom-out-up" data-aos-delay="100">
+                                <div class="content">
+                                    <div class="imgBox">
+                                        <img src="resources/Images/melba_student.jpeg" alt="Client #3" />
+                                    </div>
+                                    <div class="contentBx">
+                                        <h3 style="--i: 1">Melba</h3>
+                                        <h3 style="--i: 2">
+                                            <span style="font-size: 20px">
+                                                With one of our loans, Melba is now able to pursue her dream career.
+                                            </span>
+                                        </h3>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div> 
+                    </div> 
+                </div>
+
+            </div>
+        </main>
+        <div v-if="loading" class="loader-container">
+            <div class="loader"></div>
+        </div>
+            
+        <footer class="footerColor">
+            <div class="d-flex justify-content-between ps-4 pe-4">
+                <div class="justify-content-center align-items-center">
+                    <p class="pColor text-center" style="color: white; font-size: 1rem;">2023 - &copy; All rights reserved</p>
+                </div>
+                <div class="d-flex gap-3 iconSize">
+                    <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.whatsapp.com/"><i class="bi bi-whatsapp"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="resources/index.js"></script>
+</body>
+</html>
