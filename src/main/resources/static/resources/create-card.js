@@ -35,7 +35,7 @@ createApp({
     },
     createCard() {
       axios
-        .post('/api/clients/current/cards',
+        .post('/api/clients/currents/cards',
          `cardType=${this.cardType}&cardColor=${this.cardColor}`)
         .then((response) => {
           console.log("Carta creada: " + response)

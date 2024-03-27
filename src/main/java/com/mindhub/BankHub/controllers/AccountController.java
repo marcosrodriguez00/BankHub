@@ -44,7 +44,7 @@ public class AccountController {
     }
 
 
-    @PostMapping("/clients/current/accounts")
+    @PostMapping("/clients/currents/accounts")
     public ResponseEntity<Object> newAccount(Authentication authentication, @RequestParam AccountType accountType) {
 
         // defino el cliente
@@ -73,7 +73,7 @@ public class AccountController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PostMapping("/clients/current/accounts/delete")
+    @PostMapping("/clients/currents/accounts/delete")
     public ResponseEntity<Object> deactivateAccount(Authentication authentication,
                                                     @RequestParam String accountNumber) {
 

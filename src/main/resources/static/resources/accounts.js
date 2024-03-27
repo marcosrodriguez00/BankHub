@@ -50,7 +50,7 @@ createApp({
     },
     createAccount() {
       axios
-      .post('/api/clients/current/accounts', `accountType=${this.newAccountType}`)
+      .post('/api/clients/currents/accounts', `accountType=${this.newAccountType}`)
       .then(response => {
 
         Swal.fire({

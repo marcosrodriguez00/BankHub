@@ -20,8 +20,42 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
+        http.authorizeHttpRequests( (ant) ->
+                // permisos genericos
+                ant.requestMatchers("/index.html", "/web/login.html", "/web/register.html").permitAll()
+                        .requestMatchers("/resources/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/login", "/api/clients").permitAll()
+                        // permisos de ADMIN
+                        .requestMatchers("/rest/**", "/api/clients", "/web/admin/**").hasAuthority("ADMIN")
+                        // permisos para el cliente
+                        .requestMatchers(HttpMethod.GET, "/api/clients/currents", "/api/accounts/{id}",
+                                "/api/transactions", "/api/loans").authenticated()
+                        .requestMatchers(HttpMethod.POST, "/api/clients/currents/**", "/api/transactions",
+                                "/api/loans", "/api/loans/pay").authenticated()
+                        .requestMatchers("/web/accounts.html", "/web/account.html", "/web/cards.html",
+                                "/web/create-card.html", "/web/transfers.html", "/web/loan-application.html",
+                                "/web/loan-payment.html").authenticated()
+                        .requestMatchers("/**").hasAuthority("ADMIN")
+                        .anyRequest().denyAll())
+
+                        .csrf(AbstractHttpConfigurer::disable)
+                        .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))
+                        .exceptionHandling(exc -> exc.authenticationEntryPoint(((request, response, authException) -> clearAuthenticationAttributes(request))));
+
+
+        /*
+        http.authorizeHttpRequests( (ant) ->
+                        ant.requestMatchers("/**").permitAll())
+                .csrf(AbstractHttpConfigurer::disable)
+                .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))
+                .exceptionHandling(exc -> exc.authenticationEntryPoint(((request, response, authException) -> clearAuthenticationAttributes(request))));
+
+
+         */
+
+        /*
         http.authorizeHttpRequests( ant ->
-                        ant.requestMatchers("/index.html", "/Web/login.html", "/Web/register.html", "/resources/**").permitAll()
+                        ant.requestMatchers("/index.html", "/web/login.html", "/web/register.html", "/resources/**").permitAll()
                                 .requestMatchers(HttpMethod.POST, "/api/login", "/api/clients").permitAll()
                                 .requestMatchers("/rest/**", "/api/clients", "/web/admin/**").hasAuthority("ADMIN")
                                 .requestMatchers(HttpMethod.GET, "/api/clients/currents", "/api/accounts/{id}",
@@ -36,7 +70,11 @@ public class SecurityConfiguration {
                 .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))
                 .exceptionHandling(exc -> exc.authenticationEntryPoint(((request, response, authException) -> clearAuthenticationAttributes(request))));
 
-        http.formLogin( formLogin -> formLogin.loginPage("/web/login.html")
+
+         */
+
+
+        http.formLogin( formLogin -> formLogin.loginPage("/Web/login.html")
                         .loginProcessingUrl("/api/login")
                         .usernameParameter("email")
                         .passwordParameter("pwd")

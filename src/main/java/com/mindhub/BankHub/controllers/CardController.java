@@ -38,7 +38,7 @@ public class CardController {
         return cardService.getCardDTOById(id);
     }
 
-    @PostMapping("/clients/current/cards")
+    @PostMapping("/clients/currents/cards")
     public ResponseEntity<Object> newCard(Authentication authentication,
                                           @RequestParam CardType cardType, @RequestParam CardColor cardColor) {
 
@@ -66,7 +66,7 @@ public class CardController {
     }
 
     // patch
-    @PostMapping("/clients/current/cards/delete")
+    @PostMapping("/clients/currents/cards/delete")
     public ResponseEntity<Object> deactivateCard(Authentication authentication,
                                                  @RequestParam String cardNumber) {
         // verificar que exista la tarjeta
